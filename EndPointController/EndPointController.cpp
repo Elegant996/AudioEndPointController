@@ -193,6 +193,7 @@ HRESULT printDeviceInfo(IMMDevice* pDevice, int index, LPCWSTR outFormat, LPWSTR
 	HRESULT hr = pDevice->GetId(&strID);
 	if (!SUCCEEDED(hr))
 	{
+		fflush(stdout);
 		return hr;
 	}
 
@@ -203,6 +204,7 @@ HRESULT printDeviceInfo(IMMDevice* pDevice, int index, LPCWSTR outFormat, LPWSTR
 	hr = pDevice->GetState(&dwState);
 	if (!SUCCEEDED(hr))
 	{
+		fflush(stdout);
 		return hr;
 	}
 		
@@ -230,6 +232,7 @@ HRESULT printDeviceInfo(IMMDevice* pDevice, int index, LPCWSTR outFormat, LPWSTR
 
 		pStore->Release();
 	}
+	fflush(stdout);
 	return hr;
 }
 
@@ -262,6 +265,7 @@ HRESULT SetDefaultAudioPlaybackDevice(LPCWSTR devID)
 		hr = pPolicyConfig->SetDefaultEndpoint(devID, reserved);
 		pPolicyConfig->Release();
 	}
+	fflush(stdout);
 	return hr;
 }
 

@@ -28,3 +28,5 @@ A Windows command-line program for listing audio end-points and setting the defa
 					   - Device description (wstring)
 					   - Device interface friendly name (wstring)
 					   - Device ID (wstring)
+					   
+See also [Dave Amenta's version](https://github.com/DaveAmenta/audio-endpoint-controller).
